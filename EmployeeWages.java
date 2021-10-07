@@ -5,11 +5,14 @@ public class EmployeeWages {
 		int partTime = 2;
 		int wagePerHour = 20;
 		int workingDays = 20;
-		int workingHour, empCheck , day, wagesPerday;
-		int totalWages = 0;
-		for(day=1;day<=workingDays;day++)
+		int maxHoursInMonth = 100;
+		int workingHour, totalEmployeeWage;
+		int totalWorkingHour = 0;
+		int totalWorkingDays = 0;
+		while(totalWorkingHour <= maxHoursInMonth && totalWorkingDays < workingDays)
 		{
-			empCheck = (int) Math.floor(Math.random() * 10) % 3;
+			totalWorkingDays++;
+			int empCheck = (int) Math.floor(Math.random() * 10) % 3;
 			switch(empCheck)
 			{
 				case 1:
@@ -21,9 +24,10 @@ public class EmployeeWages {
 				default:
 				workingHour = 0;
 			}
-			wagesPerday = workingHour * wagePerHour;
-			totalWages = totalWages + wagesPerday;
+			totalWorkingHour += workingHour;
+			System.out.println("Day : " + totalWorkingDays + " Emp Hrs : " +totalWorkingHour);
 		}
-		System.out.println("Employee Wage per  month " + totalWages);
+		totalEmployeeWage = totalWorkingHour * wagePerHour;
+		System.out.println("Total Employee wages " + totalEmployeeWage);
 	}
 }
