@@ -1,16 +1,15 @@
 public class EmployeeWages {
 	public static final int fullTime = 1;
 	public static final int partTime = 2;
-	public static final int wagePerHour = 20;
-	public static final int workingDays = 20;
-	public static final int maxHoursInMonth = 100;
 	
 	public static void main(String[] args) {
 		System.out.println("Welcome to Employee Wage Computation Program on Master Branch");
-		computeEmpWage();
+		computeEmpWage("TCS", 30 , 25, 120);
+		computeEmpWage("Maps", 15 , 18, 80);
+		computeEmpWage("Google", 50 , 20, 100);
 	}
 		
-	public static void computeEmpWage() {
+	public static int computeEmpWage(String company, int wagePerhour, int workingDays, int maxHoursInMonth) {
 		int workingHour, totalEmployeeWage;
 		int totalWorkingHour = 0;
 		int totalWorkingDays = 0;
@@ -33,6 +32,7 @@ public class EmployeeWages {
 			System.out.println("Day : " + totalWorkingDays + " Emp Hrs : " +totalWorkingHour);
 		}
 		totalEmployeeWage = totalWorkingHour * wagePerHour;
-		System.out.println("Total Employee wages " + totalEmployeeWage);
+		System.out.println("Total Employee wages for "+ company + " : " +totalEmployeeWage);
+		return totalEmployeeWage;
 	}	
 }
