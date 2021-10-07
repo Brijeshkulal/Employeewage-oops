@@ -23,4 +23,4 @@ public class EmployeeWages {
 		}
 		System.out.println("Employee Wage per day is " + wagePerHour * workingHour);
 	}
-}
+}r
