@@ -1,19 +1,26 @@
 public class EmployeeWages {
 	public static void main(String[] args) {
 		System.out.println("Welcome to Employee Wage Computation Program on Master Branch");
-		int Is_Present = 1;
+		int fullTime = 1;
+		int partTime = 2;
 		int wagePerHour = 20;
-		int workingHour = 8;
-		double Emp_Check = Math.floor(Math.random() * 10) % 2;
-		if(Emp_Check == Is_Present)
+		int workingHour;
+		double Emp_Check = Math.floor(Math.random() * 10) % 3;
+		if(Emp_Check == fullTime)
 		{
 			System.out.println("Employee is present");
-			System.out.println("Employee Wage per day is " + wagePerHour * workingHour);
+			workingHour = 8;
+		}
+		else if(Emp_Check == partTime)
+		{
+			System.out.println("part time employee is present");
+			workingHour = 4;
 		}
 		else
-    		{
-      			System.out.println("Employee is absent");
-    		}
-
+		{
+			System.out.println("Employee is absent");
+			workingHour = 0;
+		}
+		System.out.println("Employee Wage per day is " + wagePerHour * workingHour);
 	}
 }
